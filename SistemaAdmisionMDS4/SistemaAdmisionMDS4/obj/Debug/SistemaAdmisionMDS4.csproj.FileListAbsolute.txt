@@ -1,0 +1,10 @@
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\SistemaAdmisionMDS4.exe.config
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\SistemaAdmisionMDS4.exe
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\SistemaAdmisionMDS4.pdb
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.csproj.SuggestedBindingRedirects.cache
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.Properties.Resources.resources
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.csproj.GenerateResource.cache
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.exe
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.pdb

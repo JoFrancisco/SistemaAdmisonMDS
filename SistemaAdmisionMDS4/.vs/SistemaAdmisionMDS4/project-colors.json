@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8683d6b9-51ef-4b33-a932-963cbc6806a6": {
+      "ProjectGuid": "8683d6b9-51ef-4b33-a932-963cbc6806a6",
+      "DisplayName": "SistemaAdmisionMDS4",
+      "ColorIndex": 0
+    },
+    "c0830f99-c3e0-4bb4-a51b-025f690e1596": {
+      "ProjectGuid": "c0830f99-c3e0-4bb4-a51b-025f690e1596",
+      "DisplayName": "CapaDatos",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
