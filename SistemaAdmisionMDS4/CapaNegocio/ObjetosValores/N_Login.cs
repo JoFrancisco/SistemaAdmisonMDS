@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio.ObjetosValores
 {
-    internal class N_Login
+    public class N_Login
     {
+
     }
 }

@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Contratos
 {
-    internal interface I_Entidad
+    public interface I_Entidad<Entity> where Entity : class
     {
+        int Agregar(Entity CEntidad);
+        int Editar(Entity CEntidad);
+        int Eliminar(string CodPk);
+        IEnumerable<Entity> ObtenerTodo();
     }
 }

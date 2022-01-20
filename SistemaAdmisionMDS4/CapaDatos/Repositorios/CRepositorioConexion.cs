@@ -14,9 +14,9 @@ namespace CapaDatos.Repositorios
         private readonly string ConexionString;
         public CRepositorioConexion()
         {
-            ConexionString = ConfigurationManager.ConnectionStrings["ConexionControlHospital"].ToString();
+            ConexionString = ConfigurationManager.ConnectionStrings["ConexionSistemaAdmision"].ToString();
         }
-        protected SqlConnection ObtenerConexion()
+        protected SqlConnection obtenerConexion()
         {
             return new SqlConnection(ConexionString);
         }
