@@ -34,7 +34,7 @@ namespace SistemaAdmisionMDS4
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonIngresar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonRegistrarse = new System.Windows.Forms.Button();
             this.textCodigo = new System.Windows.Forms.TextBox();
             this.textContrasenia = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -71,19 +71,6 @@ namespace SistemaAdmisionMDS4
             // 
             // buttonIngresar
             // 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-            this.button1.Location = new System.Drawing.Point(230, 218);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "INGRESAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-=======
-=======
->>>>>>> Stashed changes
             this.buttonIngresar.Location = new System.Drawing.Point(230, 218);
             this.buttonIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIngresar.Name = "buttonIngresar";
@@ -92,21 +79,17 @@ namespace SistemaAdmisionMDS4
             this.buttonIngresar.Text = "INGRESAR";
             this.buttonIngresar.UseVisualStyleBackColor = true;
             this.buttonIngresar.Click += new System.EventHandler(this.buttonIngresar_Click);
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
             // 
-            // button2
+            // buttonRegistrarse
             // 
-            this.button2.Location = new System.Drawing.Point(398, 37);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 28);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "REGISTRARSE";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonRegistrarse.Location = new System.Drawing.Point(398, 37);
+            this.buttonRegistrarse.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRegistrarse.Name = "buttonRegistrarse";
+            this.buttonRegistrarse.Size = new System.Drawing.Size(161, 28);
+            this.buttonRegistrarse.TabIndex = 4;
+            this.buttonRegistrarse.Text = "REGISTRARSE";
+            this.buttonRegistrarse.UseVisualStyleBackColor = true;
+            this.buttonRegistrarse.Click += new System.EventHandler(this.buttonRegistrarse_Click);
             // 
             // textCodigo
             // 
@@ -132,7 +115,7 @@ namespace SistemaAdmisionMDS4
             this.ClientSize = new System.Drawing.Size(572, 278);
             this.Controls.Add(this.textContrasenia);
             this.Controls.Add(this.textCodigo);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonRegistrarse);
             this.Controls.Add(this.buttonIngresar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -154,7 +137,7 @@ namespace SistemaAdmisionMDS4
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonIngresar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonRegistrarse;
         private System.Windows.Forms.TextBox textCodigo;
         private System.Windows.Forms.TextBox textContrasenia;
     }
