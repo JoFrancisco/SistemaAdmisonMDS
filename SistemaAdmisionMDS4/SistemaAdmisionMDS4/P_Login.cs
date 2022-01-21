@@ -19,6 +19,7 @@ namespace SistemaAdmisionMDS4
             InitializeComponent();
         }
 
+<<<<<<< Updated upstream
         private void button2_Click(object sender, EventArgs e)
         {
             Form formulario = new P_Registro();
@@ -31,6 +32,13 @@ namespace SistemaAdmisionMDS4
             if (acceso.ConsultarUsuario(textCodigo.Text, textContrasenia.Text))
             {
                 MessageBox.Show("se ingreso correctamente");
+=======
+        private void buttonIngresar_Click(object sender, EventArgs e)
+        {
+            if (acceso.ConsultarUsuario(textCodigo.ToString(), textContrasenia.ToString()))
+            {
+                MessageBox.Show("ingreso correctamente");
+>>>>>>> Stashed changes
             }
             else
             {
