@@ -31,7 +31,7 @@ namespace SistemaAdmisionMDS4
             }
         }
 
-        private void buttonRegistrarse_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Form formulario = new P_Registro();
             formulario.Show();
