@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio.ObjetosValores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SistemaAdmisionMDS4
 {
     public partial class P_Login : Form
     {
+        N_Login acceso = new N_Login();
         public P_Login()
         {
             InitializeComponent();
@@ -22,6 +24,18 @@ namespace SistemaAdmisionMDS4
             Form formulario = new P_Registro();
             formulario.Show();
             this.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (acceso.ConsultarUsuario(textCodigo.Text, textContrasenia.Text))
+            {
+                MessageBox.Show("se ingreso correctamente");
+            }
+            else
+            {
+                MessageBox.Show("no se ingreso correctamente");
+            }
         }
     }
 }

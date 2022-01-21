@@ -1,0 +1,9 @@
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\CapaNegocio\obj\Debug\CapaNegocio.pdb

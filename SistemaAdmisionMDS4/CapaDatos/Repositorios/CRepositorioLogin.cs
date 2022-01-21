@@ -15,7 +15,7 @@ namespace CapaDatos.Repositorios
             Parametros = new List<SqlParameter>();
             Parametros.Add(new SqlParameter("@codUsuario", codUsuario));
             Parametros.Add(new SqlParameter("@contrasenia", contrasenia));
-            string Consulta = "select codUsuario from TLogin where codUsario = @codUsuario and contrasenia = @contrasenia";
+            string Consulta = "select codUsuario from TLogin where codUsuario = @codUsuario and contrasenia = @contrasenia";
             var resultado = ExecuteReader(Consulta);
             foreach (DataRow item in resultado.Rows)
             {
