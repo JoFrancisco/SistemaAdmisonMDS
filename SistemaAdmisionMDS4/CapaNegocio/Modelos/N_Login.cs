@@ -13,12 +13,13 @@ namespace CapaNegocio.ObjetosValores
         private CRepositorioLogin usuario;
         private string codUsuario;
         private string contrasenia;
-        [Required(ErrorMessage = "el email es necesario")]
-        [EmailAddress]
+        [Required(ErrorMessage = "El dni del usuario es necesario")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El dni del usuario debe contener solo numeros")]
+        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El dni del usuario debe tener 8 digitos")]
         public string CodUsuario { get => codUsuario; set => codUsuario = value; }
-        [Required(ErrorMessage = "El nombre del paciente es necesario")]
-        [RegularExpression("(^[a-z A-Z]+$)", ErrorMessage = "El nombre del paciente solo debe contener letras")]
-        [StringLength(maximumLength: 40, MinimumLength = 3, ErrorMessage = "El nombre del paciente debe contener de 4 a 40 letras")]
+        [Required(ErrorMessage = "Es Necesario La contraseña")]
+        [RegularExpression("(^[a-z 0-9 A-Z]+$)", ErrorMessage = "La contrasenia no debe incluir caracteres especiales")]
+        [StringLength(maximumLength: 40, MinimumLength = 6, ErrorMessage = "la contraseña de ser minimo de 5 caracteres y maximo de 40")]
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         
         public N_Login()

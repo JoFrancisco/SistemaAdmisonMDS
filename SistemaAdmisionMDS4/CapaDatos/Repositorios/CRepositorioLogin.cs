@@ -10,6 +10,8 @@ namespace CapaDatos.Repositorios
 {
     public class CRepositorioLogin:CRepositorioGeneral
     {
+        private string insertar = "INSERT TLogin (codUsuario, nombreUsuario, contrasenia, tipoUsuario) " +
+                                    "VALUES (@codigo, @nombre, @contrasenia, @tipo)";
         public bool ConsultarUsuario(string codUsuario, string contrasenia)
         {
             Parametros = new List<SqlParameter>();
@@ -22,6 +24,15 @@ namespace CapaDatos.Repositorios
                 return item[0].ToString().Equals(codUsuario.ToString());
             }
             return false;
+        }
+        public int Agregar(string codigo, string nombre, string contrasenia, string tipo)
+        {
+            Parametros = new List<SqlParameter>();
+            Parametros.Add(new SqlParameter("@codigo", codigo));
+            Parametros.Add(new SqlParameter("@nombre", nombre));
+            Parametros.Add(new SqlParameter("@contrasenia", contrasenia));
+            Parametros.Add(new SqlParameter("@tipo", tipo));
+            return ExecuteNonQuery(insertar);
         }
     }
 }

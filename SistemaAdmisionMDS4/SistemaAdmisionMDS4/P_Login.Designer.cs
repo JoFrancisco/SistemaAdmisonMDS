@@ -37,8 +37,8 @@ namespace SistemaAdmisionMDS4
             this.textCodigo = new System.Windows.Forms.TextBox();
             this.textContrasenia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,19 +61,19 @@ namespace SistemaAdmisionMDS4
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(310, 72);
+            this.label2.Location = new System.Drawing.Point(353, 76);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 21);
+            this.label2.Size = new System.Drawing.Size(41, 21);
             this.label2.TabIndex = 1;
-            this.label2.Text = "USUARIO";
+            this.label2.Text = "DNI";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(268, 132);
+            this.label3.Location = new System.Drawing.Point(291, 133);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 21);
@@ -82,7 +82,7 @@ namespace SistemaAdmisionMDS4
             // 
             // buttonIngresar
             // 
-            this.buttonIngresar.Location = new System.Drawing.Point(425, 189);
+            this.buttonIngresar.Location = new System.Drawing.Point(451, 186);
             this.buttonIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIngresar.Name = "buttonIngresar";
             this.buttonIngresar.Size = new System.Drawing.Size(100, 28);
@@ -124,6 +124,16 @@ namespace SistemaAdmisionMDS4
             this.panel1.Size = new System.Drawing.Size(252, 283);
             this.panel1.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgUnsaac;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 280);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // linkLabel1
             // 
             this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkRed;
@@ -137,16 +147,6 @@ namespace SistemaAdmisionMDS4
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "registrarse";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgUnsaac;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(252, 280);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
             // 
             // P_Login
             // 

@@ -69,5 +69,15 @@ namespace SistemaAdmisionMDS4.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgUnsaac1_jpg {
+            get {
+                object obj = ResourceManager.GetObject("imgUnsaac1.jpg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
