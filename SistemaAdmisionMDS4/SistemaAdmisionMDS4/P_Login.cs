@@ -20,6 +20,7 @@ namespace SistemaAdmisionMDS4
         }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         private void button2_Click(object sender, EventArgs e)
         {
             Form formulario = new P_Registro();
@@ -33,11 +34,16 @@ namespace SistemaAdmisionMDS4
             {
                 MessageBox.Show("se ingreso correctamente");
 =======
+=======
+>>>>>>> Stashed changes
         private void buttonIngresar_Click(object sender, EventArgs e)
         {
             if (acceso.ConsultarUsuario(textCodigo.ToString(), textContrasenia.ToString()))
             {
                 MessageBox.Show("ingreso correctamente");
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             }
             else

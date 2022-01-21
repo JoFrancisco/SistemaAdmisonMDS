@@ -72,6 +72,7 @@ namespace SistemaAdmisionMDS4
             // buttonIngresar
             // 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             this.button1.Location = new System.Drawing.Point(230, 218);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
@@ -81,6 +82,8 @@ namespace SistemaAdmisionMDS4
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
 =======
+=======
+>>>>>>> Stashed changes
             this.buttonIngresar.Location = new System.Drawing.Point(230, 218);
             this.buttonIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIngresar.Name = "buttonIngresar";
@@ -89,6 +92,9 @@ namespace SistemaAdmisionMDS4
             this.buttonIngresar.Text = "INGRESAR";
             this.buttonIngresar.UseVisualStyleBackColor = true;
             this.buttonIngresar.Click += new System.EventHandler(this.buttonIngresar_Click);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
             // 
             // button2

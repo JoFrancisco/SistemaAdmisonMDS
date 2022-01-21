@@ -10,6 +10,7 @@ C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaA
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.pdb
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.P_Login.resources
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\acer\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\SistemaAdmisionMDS4.exe.config
 C:\Users\acer\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\SistemaAdmisionMDS4.exe
 C:\Users\acer\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\SistemaAdmisionMDS4.pdb
@@ -23,12 +24,17 @@ C:\Users\acer\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmi
 C:\Users\acer\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.pdb
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\CapaNegocio.dll
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\CapaDatos.dll
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\CapaNegocio.pdb
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\bin\Debug\CapaDatos.pdb
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.P_Registro.resources
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\SistemaAdmisionMDS4\obj\Debug\SistemaAdmisionMDS4.csproj.CopyComplete
