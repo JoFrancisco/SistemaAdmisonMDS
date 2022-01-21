@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaAdmisionMDS4
 {
-    public partial class P_Login : Form
+    public partial class P_Registro : Form
     {
-        public P_Login()
+        public P_Registro()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Form formulario = new P_Registro();
-            formulario.Show();
-            this.Visible = false;
         }
     }
 }

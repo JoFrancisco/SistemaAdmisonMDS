@@ -45,7 +45,7 @@ namespace SistemaAdmisionMDS4
             this.label1.Location = new System.Drawing.Point(162, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 16);
+            this.label1.Size = new System.Drawing.Size(175, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA DE ADMISION UNSAAC";
             // 
@@ -55,7 +55,7 @@ namespace SistemaAdmisionMDS4
             this.label2.Location = new System.Drawing.Point(55, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "USUARIO";
             // 
@@ -65,14 +65,14 @@ namespace SistemaAdmisionMDS4
             this.label3.Location = new System.Drawing.Point(13, 163);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 16);
+            this.label3.Size = new System.Drawing.Size(88, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "CONSTRASEÑA";
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(230, 218);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 3;
@@ -82,28 +82,29 @@ namespace SistemaAdmisionMDS4
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(398, 37);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 28);
             this.button2.TabIndex = 4;
             this.button2.Text = "REGISTRARSE";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(191, 106);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 22);
+            this.textBox1.Size = new System.Drawing.Size(246, 20);
             this.textBox1.TabIndex = 5;
             // 
             // textContrasenia
             // 
             this.textContrasenia.Location = new System.Drawing.Point(191, 160);
-            this.textContrasenia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.textContrasenia.Name = "textContrasenia";
             this.textContrasenia.PasswordChar = '*';
-            this.textContrasenia.Size = new System.Drawing.Size(246, 22);
+            this.textContrasenia.Size = new System.Drawing.Size(246, 20);
             this.textContrasenia.TabIndex = 6;
             // 
             // P_Login
@@ -118,7 +119,7 @@ namespace SistemaAdmisionMDS4
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "P_Login";
