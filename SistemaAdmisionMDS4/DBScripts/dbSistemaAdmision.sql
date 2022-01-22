@@ -11,7 +11,14 @@ create table TLogin(
 create table TPostulante(
 	dni varchar(8) not null primary key,
 	nombres varchar(40) not null,
-	fecha datetime not null
+	fecha datetime not null,
+	foreign key (dni) references TRecibo(dni)
+);
+
+create table TRecibo(
+	id int Identity(1,1) not null primary key,
+	nroRecibo varchar(20) not null unique,
+	dni varchar(8) not null unique,
 );
 
 
