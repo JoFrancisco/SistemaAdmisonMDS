@@ -22,9 +22,23 @@ create table TRecibo(
 );
 
 
+
+select*
+from TRecibo
+
 use DBSistemaAdmision
 go
---Insertar datos en TPersonal---------------------
+
+insert into TRecibo Values ('R-00001','12345678')
+insert into TRecibo Values ('R-00002','23456789')
+insert into TRecibo Values ('R-00003','34567891')
+insert into TRecibo Values ('R-00004','45678912')
+insert into TRecibo Values ('R-00005','56789123')
+
+
+
+
+
 insert into TPostulante Values ('12345678','CAYO ABEL QUEKQAÑO QUISPE',21/01/2022)
 insert into TPostulante Values ('23456789','JOSE FRANCISCO PUMA POTOCINO',21/01/2022)
 insert into TPostulante Values ('34567891','ERICK USCACHI CCAPA',21/01/2022)
