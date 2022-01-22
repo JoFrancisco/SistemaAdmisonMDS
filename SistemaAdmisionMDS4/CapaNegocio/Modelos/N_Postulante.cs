@@ -119,7 +119,7 @@ namespace CapaNegocio.Modelos
         }
         public void mensajesDni()
         {
-
+            
         }
         public void Dispose()
         {

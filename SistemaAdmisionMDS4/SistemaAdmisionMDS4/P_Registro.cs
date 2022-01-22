@@ -45,6 +45,8 @@ namespace SistemaAdmisionMDS4
             n_Postulante.Dni = textDni.Text;
             n_Postulante.Nombres = textNombres.Text;
             n_Postulante.Fecha = datePicker.Value;
+            n_Postulante.Estado = EstadoEntidad.Agregad;
+            n_Postulante.GuardarCambios();
         }
 
         private void textDni_TextChanged(object sender, EventArgs e)
