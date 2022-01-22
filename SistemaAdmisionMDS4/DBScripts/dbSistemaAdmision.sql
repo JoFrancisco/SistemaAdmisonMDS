@@ -11,5 +11,5 @@ create table TLogin(
 create table TPostulante(
 	dni varchar(8) not null primary key,
 	nombres varchar(40) not null,
-	fecha date not null
+	fecha datetime not null
 );

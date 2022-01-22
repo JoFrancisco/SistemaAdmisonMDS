@@ -30,46 +30,51 @@ namespace SistemaAdmisionMDS4
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Registro));
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textDni = new System.Windows.Forms.TextBox();
+            this.textNombres = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.textContrasenia = new System.Windows.Forms.TextBox();
+            this.textVerContrasenia = new System.Windows.Forms.TextBox();
+            this.linkDni = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.picBoxMinimizar = new System.Windows.Forms.PictureBox();
+            this.picBoxCerrar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCerrar)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // textDni
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(562, 131);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(314, 28);
-            this.textBox1.TabIndex = 0;
+            this.textDni.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textDni.Location = new System.Drawing.Point(562, 131);
+            this.textDni.Margin = new System.Windows.Forms.Padding(4);
+            this.textDni.Name = "textDni";
+            this.textDni.Size = new System.Drawing.Size(314, 28);
+            this.textDni.TabIndex = 0;
+            this.textDni.TextChanged += new System.EventHandler(this.textDni_TextChanged);
             // 
-            // textBox2
+            // textNombres
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(562, 184);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(314, 28);
-            this.textBox2.TabIndex = 0;
+            this.textNombres.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNombres.Location = new System.Drawing.Point(562, 184);
+            this.textNombres.Margin = new System.Windows.Forms.Padding(4);
+            this.textNombres.Name = "textNombres";
+            this.textNombres.Size = new System.Drawing.Size(314, 28);
+            this.textNombres.TabIndex = 0;
             // 
             // label1
             // 
@@ -107,15 +112,16 @@ namespace SistemaAdmisionMDS4
             this.label3.TabIndex = 1;
             this.label3.Text = "fecha de Nacimiento";
             // 
-            // button1
+            // btnRegistrar
             // 
-            this.button1.Location = new System.Drawing.Point(609, 425);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Location = new System.Drawing.Point(609, 425);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
+            this.btnRegistrar.TabIndex = 2;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label4
             // 
@@ -140,6 +146,7 @@ namespace SistemaAdmisionMDS4
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgUnsaac1_jpg;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -148,14 +155,14 @@ namespace SistemaAdmisionMDS4
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(562, 244);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(314, 26);
-            this.dateTimePicker1.TabIndex = 5;
-            this.dateTimePicker1.UseWaitCursor = true;
+            this.datePicker.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Location = new System.Drawing.Point(562, 244);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(314, 26);
+            this.datePicker.TabIndex = 5;
+            this.datePicker.UseWaitCursor = true;
             // 
             // label5
             // 
@@ -181,37 +188,37 @@ namespace SistemaAdmisionMDS4
             this.label6.TabIndex = 7;
             this.label6.Text = "Contraseña";
             // 
-            // textBox3
+            // textContrasenia
             // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(562, 302);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(314, 28);
-            this.textBox3.TabIndex = 8;
+            this.textContrasenia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textContrasenia.Location = new System.Drawing.Point(562, 302);
+            this.textContrasenia.Margin = new System.Windows.Forms.Padding(4);
+            this.textContrasenia.Name = "textContrasenia";
+            this.textContrasenia.PasswordChar = '*';
+            this.textContrasenia.Size = new System.Drawing.Size(314, 28);
+            this.textContrasenia.TabIndex = 8;
             // 
-            // textBox4
+            // textVerContrasenia
             // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(562, 360);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.PasswordChar = '*';
-            this.textBox4.Size = new System.Drawing.Size(314, 28);
-            this.textBox4.TabIndex = 9;
+            this.textVerContrasenia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textVerContrasenia.Location = new System.Drawing.Point(562, 360);
+            this.textVerContrasenia.Margin = new System.Windows.Forms.Padding(4);
+            this.textVerContrasenia.Name = "textVerContrasenia";
+            this.textVerContrasenia.PasswordChar = '*';
+            this.textVerContrasenia.Size = new System.Drawing.Size(314, 28);
+            this.textVerContrasenia.TabIndex = 9;
             // 
-            // linkLabel1
+            // linkDni
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(805, 163);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(71, 16);
-            this.linkLabel1.TabIndex = 10;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "obligatorio";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.linkDni.AutoSize = true;
+            this.linkDni.LinkColor = System.Drawing.Color.DimGray;
+            this.linkDni.Location = new System.Drawing.Point(621, 163);
+            this.linkDni.Name = "linkDni";
+            this.linkDni.Size = new System.Drawing.Size(224, 16);
+            this.linkDni.TabIndex = 10;
+            this.linkDni.TabStop = true;
+            this.linkDni.Text = "                                                   obligatorio";
+            this.linkDni.VisitedLinkColor = System.Drawing.Color.DimGray;
             // 
             // linkLabel2
             // 
@@ -261,36 +268,65 @@ namespace SistemaAdmisionMDS4
             this.linkLabel5.Text = "obligatorio";
             this.linkLabel5.VisitedLinkColor = System.Drawing.Color.DimGray;
             // 
+            // picBoxMinimizar
+            // 
+            this.picBoxMinimizar.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgMinimize;
+            this.picBoxMinimizar.Location = new System.Drawing.Point(857, 12);
+            this.picBoxMinimizar.Name = "picBoxMinimizar";
+            this.picBoxMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.picBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxMinimizar.TabIndex = 16;
+            this.picBoxMinimizar.TabStop = false;
+            this.picBoxMinimizar.Click += new System.EventHandler(this.picBoxMinimizar_Click);
+            // 
+            // picBoxCerrar
+            // 
+            this.picBoxCerrar.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgCerrar;
+            this.picBoxCerrar.Location = new System.Drawing.Point(888, 12);
+            this.picBoxCerrar.Name = "picBoxCerrar";
+            this.picBoxCerrar.Size = new System.Drawing.Size(25, 25);
+            this.picBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCerrar.TabIndex = 15;
+            this.picBoxCerrar.TabStop = false;
+            this.picBoxCerrar.Click += new System.EventHandler(this.picBoxCerrar_Click);
+            // 
             // P_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(925, 479);
+            this.Controls.Add(this.picBoxMinimizar);
+            this.Controls.Add(this.picBoxCerrar);
             this.Controls.Add(this.linkLabel5);
             this.Controls.Add(this.linkLabel4);
             this.Controls.Add(this.linkLabel3);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.linkDni);
+            this.Controls.Add(this.textVerContrasenia);
+            this.Controls.Add(this.textContrasenia);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.datePicker);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textNombres);
+            this.Controls.Add(this.textDni);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "P_Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Postulante";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.P_Registro_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,24 +334,26 @@ namespace SistemaAdmisionMDS4
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textDni;
+        private System.Windows.Forms.TextBox textNombres;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.TextBox textContrasenia;
+        private System.Windows.Forms.TextBox textVerContrasenia;
+        private System.Windows.Forms.LinkLabel linkDni;
         private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel3;
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.PictureBox picBoxCerrar;
+        private System.Windows.Forms.PictureBox picBoxMinimizar;
     }
 }

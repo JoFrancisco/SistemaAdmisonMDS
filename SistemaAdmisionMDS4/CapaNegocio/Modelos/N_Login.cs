@@ -27,7 +27,7 @@ namespace CapaNegocio.ObjetosValores
             usuario = new CRepositorioLogin();
         }
         
-        public bool ConsultarUsuario(string codUsuario,string contrasenia)
+        public bool ConsultarUsuario()
         {
             return usuario.ConsultarUsuario(codUsuario, contrasenia);
         }

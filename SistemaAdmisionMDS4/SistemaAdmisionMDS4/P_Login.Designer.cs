@@ -37,9 +37,13 @@ namespace SistemaAdmisionMDS4
             this.textCodigo = new System.Windows.Forms.TextBox();
             this.textContrasenia = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.picBoxMinimizar = new System.Windows.Forms.PictureBox();
+            this.picBoxCerrar = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,7 +65,7 @@ namespace SistemaAdmisionMDS4
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
-            this.label2.Location = new System.Drawing.Point(353, 76);
+            this.label2.Location = new System.Drawing.Point(374, 98);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(41, 21);
@@ -73,7 +77,7 @@ namespace SistemaAdmisionMDS4
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(291, 133);
+            this.label3.Location = new System.Drawing.Point(289, 164);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 21);
@@ -82,7 +86,7 @@ namespace SistemaAdmisionMDS4
             // 
             // buttonIngresar
             // 
-            this.buttonIngresar.Location = new System.Drawing.Point(451, 186);
+            this.buttonIngresar.Location = new System.Drawing.Point(497, 216);
             this.buttonIngresar.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIngresar.Name = "buttonIngresar";
             this.buttonIngresar.Size = new System.Drawing.Size(100, 28);
@@ -96,7 +100,7 @@ namespace SistemaAdmisionMDS4
             this.textCodigo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.textCodigo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCodigo.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textCodigo.Location = new System.Drawing.Point(425, 69);
+            this.textCodigo.Location = new System.Drawing.Point(465, 91);
             this.textCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.textCodigo.Name = "textCodigo";
             this.textCodigo.Size = new System.Drawing.Size(246, 28);
@@ -107,7 +111,7 @@ namespace SistemaAdmisionMDS4
             this.textContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.textContrasenia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textContrasenia.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.textContrasenia.Location = new System.Drawing.Point(425, 126);
+            this.textContrasenia.Location = new System.Drawing.Point(465, 157);
             this.textContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.textContrasenia.Name = "textContrasenia";
             this.textContrasenia.PasswordChar = '*';
@@ -124,6 +128,42 @@ namespace SistemaAdmisionMDS4
             this.panel1.Size = new System.Drawing.Size(252, 283);
             this.panel1.TabIndex = 7;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkRed;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.Location = new System.Drawing.Point(671, 253);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(94, 21);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "registrarse";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // picBoxMinimizar
+            // 
+            this.picBoxMinimizar.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgMinimize;
+            this.picBoxMinimizar.Location = new System.Drawing.Point(729, 7);
+            this.picBoxMinimizar.Name = "picBoxMinimizar";
+            this.picBoxMinimizar.Size = new System.Drawing.Size(25, 25);
+            this.picBoxMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxMinimizar.TabIndex = 10;
+            this.picBoxMinimizar.TabStop = false;
+            this.picBoxMinimizar.Click += new System.EventHandler(this.picBoxMinimizar_Click);
+            // 
+            // picBoxCerrar
+            // 
+            this.picBoxCerrar.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgCerrar;
+            this.picBoxCerrar.Location = new System.Drawing.Point(760, 7);
+            this.picBoxCerrar.Name = "picBoxCerrar";
+            this.picBoxCerrar.Size = new System.Drawing.Size(25, 25);
+            this.picBoxCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxCerrar.TabIndex = 9;
+            this.picBoxCerrar.TabStop = false;
+            this.picBoxCerrar.Click += new System.EventHandler(this.picBoxCerrar_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgUnsaac;
@@ -134,26 +174,14 @@ namespace SistemaAdmisionMDS4
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.DarkRed;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel1.Location = new System.Drawing.Point(606, 253);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(94, 21);
-            this.linkLabel1.TabIndex = 8;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "registrarse";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            // 
             // P_Login
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(712, 283);
+            this.ClientSize = new System.Drawing.Size(796, 283);
+            this.Controls.Add(this.picBoxMinimizar);
+            this.Controls.Add(this.picBoxCerrar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textContrasenia);
@@ -162,6 +190,7 @@ namespace SistemaAdmisionMDS4
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -169,7 +198,10 @@ namespace SistemaAdmisionMDS4
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Sistema Admision";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.P_Login_MouseDown);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,5 +219,7 @@ namespace SistemaAdmisionMDS4
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picBoxCerrar;
+        private System.Windows.Forms.PictureBox picBoxMinimizar;
     }
 }

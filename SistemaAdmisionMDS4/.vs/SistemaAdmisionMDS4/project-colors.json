@@ -20,6 +20,11 @@
       "ProjectGuid": "c86b6fa2-12b8-4214-9ad6-22e0bb32d1d9",
       "DisplayName": "CapaNegocio",
       "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Archivos varios",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 4

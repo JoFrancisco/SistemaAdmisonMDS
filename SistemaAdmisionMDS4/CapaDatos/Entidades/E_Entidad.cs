@@ -8,6 +8,7 @@ namespace CapaDatos.Entidades
 {
     public abstract class E_Entidad
     {
+
         private string aNombre_Tabla;
 
         private string[] aNombresCabezera;
@@ -27,7 +28,10 @@ namespace CapaDatos.Entidades
         {
             return aNombre_Tabla;
         }
-
+        public int numeroAtributos()
+        {
+            return aNombresCabezera.Length;
+        }
         public abstract string[] NombresAtributos();
 
     }
