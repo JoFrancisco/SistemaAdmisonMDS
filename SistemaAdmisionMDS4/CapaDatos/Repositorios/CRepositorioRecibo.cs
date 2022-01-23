@@ -10,47 +10,32 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Repositorios
 {
-    public class CRepositorioPostulante : CRepositorioGeneral, I_RepositorioEntidad
+    public class CRepositorioRecibo:CRepositorioGeneral, I_RepositorioEntidad
     {
         E_Entidad entidad;
-        public CRepositorioPostulante()
+        public CRepositorioRecibo()
         {
-
+            entidad = new E_Recibo();
         }
         public int Agregar(E_Entidad CEntidad)
         {
             entidad = CEntidad;
-            string agregar = "INSERT INTO TPostulante (dni, nombres, fecha) " +
-                            "VALUES('@dni', '@nombres', '@fecha')";
+            string agregar = "INSERT INTO TRecibo (nroRecibo, dni) " +
+                            "VALUES('@nroRecibo', '@dni')";
             List<dynamic> ParametrosS = entidad.Valores;
             string[] NombresAtributos = entidad.NombresAtributos();
             Parametros = new List<SqlParameter>();
-            for (int k = 0; k < NombresAtributos.Length - 1; k++)
+            for (int k = 0; k < NombresAtributos.Length; k++)
             {
                 Parametros.Add(new SqlParameter($"@{NombresAtributos[k]}", ParametrosS[k]));
             }
-            SqlParameter param = new SqlParameter($"@{NombresAtributos[2]}", SqlDbType.DateTime);
-            Parametros.Add(param);
             return ExecuteNonQuery(agregar);
-        }
-
-        public bool Buscar(string cad, string nro)
-        {
-            Parametros = new List<SqlParameter>();
-            Parametros.Add(new SqlParameter("@dni", cad));
-            string Consulta = "select dni from TPostulante where dni = @dni";
-            var resultado = ExecuteReader(Consulta);
-            foreach (DataRow item in resultado.Rows)
-            {
-                return item[0].ToString().Equals(cad.ToString());
-            }
-            return false;
         }
 
         public int Editar(E_Entidad CEntidad)
         {
             entidad = CEntidad;
-            string editar = "update TPostulante set nombres = @nombres, fecha = @Fecha where dni = @dni";
+            string editar = "update TRecibo set nroRecibo = @nroRecibo where dni = @dni";
             List<dynamic> ParametrosS = entidad.Valores;
             Parametros = new List<System.Data.SqlClient.SqlParameter>();
             for (int k = 0; k < entidad.numeroAtributos(); k++)
@@ -62,7 +47,7 @@ namespace CapaDatos.Repositorios
 
         public int Eliminar(string CodPk)
         {
-            string eliminar = "delete from TPostulante where dni = @dni";
+            string eliminar = "delete from TRecibo where dni = @dni";
             Parametros = new List<SqlParameter>();
             Parametros.Add(new SqlParameter("@dni", CodPk));
             return ExecuteNonQuery(eliminar);
@@ -70,7 +55,7 @@ namespace CapaDatos.Repositorios
 
         public IEnumerable<E_Entidad> ObtenerTodo()
         {
-            string registros = "select * from TPostulante";
+            string registros = "select nroRecibo, dni from TRecibo";
             var tablaPostulantes = ExecuteReader(registros);
             var listaPostulantes = new List<E_Entidad>();
             List<dynamic> Valores;
@@ -86,6 +71,18 @@ namespace CapaDatos.Repositorios
             }
             return listaPostulantes;
         }
-    }
 
+        public bool Buscar(string cad, string nro)
+        {
+            Parametros = new List<SqlParameter>();
+            Parametros.Add(new SqlParameter("@dni", cad));
+            string Consulta = "select nroRecibo, dni from TRecibo where dni = @dni";
+            var resultado = ExecuteReader(Consulta);
+            foreach (DataRow item in resultado.Rows)
+            {
+                return item[0].ToString().Equals(nro.ToString());
+            }
+            return false;
+        }
+    }
 }

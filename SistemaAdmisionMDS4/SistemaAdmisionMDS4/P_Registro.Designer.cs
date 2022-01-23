@@ -45,12 +45,14 @@ namespace SistemaAdmisionMDS4
             this.textContrasenia = new System.Windows.Forms.TextBox();
             this.textVerContrasenia = new System.Windows.Forms.TextBox();
             this.linkDni = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
+            this.linkNombres = new System.Windows.Forms.LinkLabel();
+            this.linkContrasenia = new System.Windows.Forms.LinkLabel();
+            this.linkVerContrasenia = new System.Windows.Forms.LinkLabel();
             this.picBoxMinimizar = new System.Windows.Forms.PictureBox();
             this.picBoxCerrar = new System.Windows.Forms.PictureBox();
+            this.textRecibo = new System.Windows.Forms.TextBox();
+            this.linkRecibo = new System.Windows.Forms.LinkLabel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
@@ -75,6 +77,7 @@ namespace SistemaAdmisionMDS4
             this.textNombres.Name = "textNombres";
             this.textNombres.Size = new System.Drawing.Size(314, 28);
             this.textNombres.TabIndex = 0;
+            this.textNombres.TextChanged += new System.EventHandler(this.textNombres_TextChanged);
             // 
             // label1
             // 
@@ -114,7 +117,7 @@ namespace SistemaAdmisionMDS4
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(609, 425);
+            this.btnRegistrar.Location = new System.Drawing.Point(603, 485);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
@@ -141,7 +144,7 @@ namespace SistemaAdmisionMDS4
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 479);
+            this.panel1.Size = new System.Drawing.Size(352, 559);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox1
@@ -150,7 +153,7 @@ namespace SistemaAdmisionMDS4
             this.pictureBox1.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgUnsaac1_jpg;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(352, 479);
+            this.pictureBox1.Size = new System.Drawing.Size(352, 559);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -197,6 +200,7 @@ namespace SistemaAdmisionMDS4
             this.textContrasenia.PasswordChar = '*';
             this.textContrasenia.Size = new System.Drawing.Size(314, 28);
             this.textContrasenia.TabIndex = 8;
+            this.textContrasenia.TextChanged += new System.EventHandler(this.textContrasenia_TextChanged);
             // 
             // textVerContrasenia
             // 
@@ -207,66 +211,61 @@ namespace SistemaAdmisionMDS4
             this.textVerContrasenia.PasswordChar = '*';
             this.textVerContrasenia.Size = new System.Drawing.Size(314, 28);
             this.textVerContrasenia.TabIndex = 9;
+            this.textVerContrasenia.TextChanged += new System.EventHandler(this.textVerContrasenia_TextChanged);
             // 
             // linkDni
             // 
+            this.linkDni.ActiveLinkColor = System.Drawing.Color.White;
             this.linkDni.AutoSize = true;
-            this.linkDni.LinkColor = System.Drawing.Color.DimGray;
-            this.linkDni.Location = new System.Drawing.Point(621, 163);
+            this.linkDni.BackColor = System.Drawing.Color.White;
+            this.linkDni.ForeColor = System.Drawing.Color.Red;
+            this.linkDni.LinkColor = System.Drawing.Color.Red;
+            this.linkDni.Location = new System.Drawing.Point(805, 163);
             this.linkDni.Name = "linkDni";
-            this.linkDni.Size = new System.Drawing.Size(224, 16);
+            this.linkDni.Size = new System.Drawing.Size(71, 16);
             this.linkDni.TabIndex = 10;
             this.linkDni.TabStop = true;
-            this.linkDni.Text = "                                                   obligatorio";
+            this.linkDni.Text = "obligatorio";
             this.linkDni.VisitedLinkColor = System.Drawing.Color.DimGray;
             // 
-            // linkLabel2
+            // linkNombres
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel2.Location = new System.Drawing.Point(805, 216);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(71, 16);
-            this.linkLabel2.TabIndex = 11;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "obligatorio";
-            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.linkNombres.AutoSize = true;
+            this.linkNombres.ForeColor = System.Drawing.Color.Red;
+            this.linkNombres.LinkColor = System.Drawing.Color.Red;
+            this.linkNombres.Location = new System.Drawing.Point(805, 216);
+            this.linkNombres.Name = "linkNombres";
+            this.linkNombres.Size = new System.Drawing.Size(71, 16);
+            this.linkNombres.TabIndex = 11;
+            this.linkNombres.TabStop = true;
+            this.linkNombres.Text = "obligatorio";
+            this.linkNombres.VisitedLinkColor = System.Drawing.Color.DimGray;
             // 
-            // linkLabel3
+            // linkContrasenia
             // 
-            this.linkLabel3.AutoSize = true;
-            this.linkLabel3.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel3.Location = new System.Drawing.Point(805, 273);
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.Size = new System.Drawing.Size(71, 16);
-            this.linkLabel3.TabIndex = 12;
-            this.linkLabel3.TabStop = true;
-            this.linkLabel3.Text = "obligatorio";
-            this.linkLabel3.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.linkContrasenia.AutoSize = true;
+            this.linkContrasenia.BackColor = System.Drawing.Color.White;
+            this.linkContrasenia.ForeColor = System.Drawing.Color.Red;
+            this.linkContrasenia.LinkColor = System.Drawing.Color.Red;
+            this.linkContrasenia.Location = new System.Drawing.Point(805, 334);
+            this.linkContrasenia.Name = "linkContrasenia";
+            this.linkContrasenia.Size = new System.Drawing.Size(71, 16);
+            this.linkContrasenia.TabIndex = 13;
+            this.linkContrasenia.TabStop = true;
+            this.linkContrasenia.Text = "obligatorio";
+            this.linkContrasenia.VisitedLinkColor = System.Drawing.Color.DimGray;
             // 
-            // linkLabel4
+            // linkVerContrasenia
             // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel4.Location = new System.Drawing.Point(805, 334);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(71, 16);
-            this.linkLabel4.TabIndex = 13;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "obligatorio";
-            this.linkLabel4.VisitedLinkColor = System.Drawing.Color.DimGray;
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.LinkColor = System.Drawing.Color.DimGray;
-            this.linkLabel5.Location = new System.Drawing.Point(805, 392);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(71, 16);
-            this.linkLabel5.TabIndex = 14;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "obligatorio";
-            this.linkLabel5.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.linkVerContrasenia.AutoSize = true;
+            this.linkVerContrasenia.LinkColor = System.Drawing.Color.Red;
+            this.linkVerContrasenia.Location = new System.Drawing.Point(805, 392);
+            this.linkVerContrasenia.Name = "linkVerContrasenia";
+            this.linkVerContrasenia.Size = new System.Drawing.Size(71, 16);
+            this.linkVerContrasenia.TabIndex = 14;
+            this.linkVerContrasenia.TabStop = true;
+            this.linkVerContrasenia.Text = "obligatorio";
+            this.linkVerContrasenia.VisitedLinkColor = System.Drawing.Color.DimGray;
             // 
             // picBoxMinimizar
             // 
@@ -290,18 +289,55 @@ namespace SistemaAdmisionMDS4
             this.picBoxCerrar.TabStop = false;
             this.picBoxCerrar.Click += new System.EventHandler(this.picBoxCerrar_Click);
             // 
+            // textRecibo
+            // 
+            this.textRecibo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textRecibo.Location = new System.Drawing.Point(562, 426);
+            this.textRecibo.Margin = new System.Windows.Forms.Padding(4);
+            this.textRecibo.Name = "textRecibo";
+            this.textRecibo.PasswordChar = '*';
+            this.textRecibo.Size = new System.Drawing.Size(314, 28);
+            this.textRecibo.TabIndex = 17;
+            this.textRecibo.TextChanged += new System.EventHandler(this.textRecibo_TextChanged);
+            // 
+            // linkRecibo
+            // 
+            this.linkRecibo.AutoSize = true;
+            this.linkRecibo.LinkColor = System.Drawing.Color.Red;
+            this.linkRecibo.Location = new System.Drawing.Point(805, 458);
+            this.linkRecibo.Name = "linkRecibo";
+            this.linkRecibo.Size = new System.Drawing.Size(71, 16);
+            this.linkRecibo.TabIndex = 18;
+            this.linkRecibo.TabStop = true;
+            this.linkRecibo.Text = "obligatorio";
+            this.linkRecibo.VisitedLinkColor = System.Drawing.Color.DimGray;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
+            this.label7.Location = new System.Drawing.Point(399, 429);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 21);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Numero Recibo";
+            // 
             // P_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(925, 479);
+            this.ClientSize = new System.Drawing.Size(925, 559);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.linkRecibo);
+            this.Controls.Add(this.textRecibo);
             this.Controls.Add(this.picBoxMinimizar);
             this.Controls.Add(this.picBoxCerrar);
-            this.Controls.Add(this.linkLabel5);
-            this.Controls.Add(this.linkLabel4);
-            this.Controls.Add(this.linkLabel3);
-            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkVerContrasenia);
+            this.Controls.Add(this.linkContrasenia);
+            this.Controls.Add(this.linkNombres);
             this.Controls.Add(this.linkDni);
             this.Controls.Add(this.textVerContrasenia);
             this.Controls.Add(this.textContrasenia);
@@ -349,11 +385,13 @@ namespace SistemaAdmisionMDS4
         private System.Windows.Forms.TextBox textContrasenia;
         private System.Windows.Forms.TextBox textVerContrasenia;
         private System.Windows.Forms.LinkLabel linkDni;
-        private System.Windows.Forms.LinkLabel linkLabel2;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel4;
-        private System.Windows.Forms.LinkLabel linkLabel5;
+        private System.Windows.Forms.LinkLabel linkNombres;
+        private System.Windows.Forms.LinkLabel linkContrasenia;
+        private System.Windows.Forms.LinkLabel linkVerContrasenia;
         private System.Windows.Forms.PictureBox picBoxCerrar;
         private System.Windows.Forms.PictureBox picBoxMinimizar;
+        private System.Windows.Forms.TextBox textRecibo;
+        private System.Windows.Forms.LinkLabel linkRecibo;
+        private System.Windows.Forms.Label label7;
     }
 }

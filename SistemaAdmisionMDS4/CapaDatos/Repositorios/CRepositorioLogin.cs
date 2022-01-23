@@ -25,6 +25,18 @@ namespace CapaDatos.Repositorios
             }
             return false;
         }
+        public bool BuscarCuenta(string dni)
+        {
+            Parametros = new List<SqlParameter>();
+            Parametros.Add(new SqlParameter("@dni", dni));
+            string Consulta = "select codUsuario from TLogin where codUsuario = @dni";
+            var resultado = ExecuteReader(Consulta);
+            foreach (DataRow item in resultado.Rows)
+            {
+                return item[0].ToString().Equals(dni.ToString());
+            }
+            return false;
+        }
         public int Agregar(string codigo, string nombre, string contrasenia, string tipo)
         {
             Parametros = new List<SqlParameter>();

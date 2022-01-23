@@ -11,6 +11,8 @@ namespace CapaDatos.Contratos
         int Agregar(Entity CEntidad);
         int Editar(Entity CEntidad);
         int Eliminar(string CodPk);
+
+        bool Buscar(string cad, string nro);
         IEnumerable<Entity> ObtenerTodo();
     }
 }

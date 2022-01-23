@@ -31,6 +31,14 @@ namespace CapaNegocio.ObjetosValores
         {
             return usuario.ConsultarUsuario(codUsuario, contrasenia);
         }
+        public bool BuscarCuenta(string dni)
+        {
+            return usuario.BuscarCuenta(dni);
+        }
+        public void AgregarCuenta(string dni, string nombres, string contrasenia, string tipo)
+        {
+            usuario.Agregar(dni, nombres, contrasenia, tipo);
+        }
         public void Dispose()
         {
 

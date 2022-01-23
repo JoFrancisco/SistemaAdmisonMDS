@@ -29,6 +29,7 @@ from TRecibo
 use DBSistemaAdmision
 go
 
+insert into TRecibo Values ('R-12345','74477447') 
 insert into TRecibo Values ('R-00001','12345678')
 insert into TRecibo Values ('R-00002','23456789')
 insert into TRecibo Values ('R-00003','34567891')
