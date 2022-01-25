@@ -10,27 +10,22 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Repositorios
 {
-    public class CRepositorioPostulante : CRepositorioGeneral, I_RepositorioEntidad
+    public class CRepositorioPostulante : CRepositorioGeneral, I_RepositorioPostulante
     {
-        E_Entidad entidad;
+        E_Postulante entidad;
         public CRepositorioPostulante()
         {
-
+            entidad = new E_Postulante();
         }
-        public int Agregar(E_Entidad CEntidad)
+        public int Agregar(E_Postulante CEntidad)
         {
             entidad = CEntidad;
             string agregar = "INSERT INTO TPostulante (dni, nombres, fecha) " +
-                            "VALUES('@dni', '@nombres', '@fecha')";
-            List<dynamic> ParametrosS = entidad.Valores;
-            string[] NombresAtributos = entidad.NombresAtributos();
+                            "VALUES(@dni, @nombres, @fecha)";
             Parametros = new List<SqlParameter>();
-            for (int k = 0; k < NombresAtributos.Length - 1; k++)
-            {
-                Parametros.Add(new SqlParameter($"@{NombresAtributos[k]}", ParametrosS[k]));
-            }
-            SqlParameter param = new SqlParameter($"@{NombresAtributos[2]}", SqlDbType.DateTime);
-            Parametros.Add(param);
+            Parametros.Add(new SqlParameter("@dni", entidad.dni ));
+            Parametros.Add(new SqlParameter("@nombres", entidad.nombres));
+            Parametros.Add(new SqlParameter("@fecha", entidad.fecha));
             return ExecuteNonQuery(agregar);
         }
 
@@ -47,16 +42,14 @@ namespace CapaDatos.Repositorios
             return false;
         }
 
-        public int Editar(E_Entidad CEntidad)
+        public int Editar(E_Postulante CEntidad)
         {
             entidad = CEntidad;
             string editar = "update TPostulante set nombres = @nombres, fecha = @Fecha where dni = @dni";
-            List<dynamic> ParametrosS = entidad.Valores;
-            Parametros = new List<System.Data.SqlClient.SqlParameter>();
-            for (int k = 0; k < entidad.numeroAtributos(); k++)
-            {
-                Parametros.Add(new SqlParameter($"@{entidad.NombresAtributos()[k]}", ParametrosS[k]));
-            }
+            Parametros = new List<SqlParameter>();
+            Parametros.Add(new SqlParameter("@dni", entidad.dni));
+            Parametros.Add(new SqlParameter("@nombres", entidad.nombres));
+            Parametros.Add(new SqlParameter("@fecha", entidad.fecha));
             return ExecuteNonQuery(editar);
         }
 
@@ -68,24 +61,23 @@ namespace CapaDatos.Repositorios
             return ExecuteNonQuery(eliminar);
         }
 
-        public IEnumerable<E_Entidad> ObtenerTodo()
+        public IEnumerable<E_Postulante> ObtenerTodo()
         {
             string registros = "select * from TPostulante";
             var tablaPostulantes = ExecuteReader(registros);
-            var listaPostulantes = new List<E_Entidad>();
-            List<dynamic> Valores;
+            var listaPostulantes = new List<E_Postulante>();
             foreach (DataRow item in tablaPostulantes.Rows)
             {
-                Valores = new List<dynamic>();
-                for (int k = 0; k < entidad.numeroAtributos(); k++)
-                {
-                    Valores.Add(item[k].ToString());
-                }
-                entidad.Valores = Valores;
-                listaPostulantes.Add(entidad);
+                var postulante = new E_Postulante {
+                    dni = item["dni"].ToString(),
+                    nombres = item["nombres"].ToString(),
+                    fecha = (DateTime)item["fecha"]
+                };
+                listaPostulantes.Add(postulante);
             }
             return listaPostulantes;
         }
+
     }
 
 }

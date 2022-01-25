@@ -10,38 +10,31 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Repositorios
 {
-    public class CRepositorioRecibo:CRepositorioGeneral, I_RepositorioEntidad
+    public class CRepositorioRecibo:CRepositorioGeneral, I_RepositorioRecibo
     {
-        E_Entidad entidad;
+        E_Recibo entidad;
         public CRepositorioRecibo()
         {
             entidad = new E_Recibo();
         }
-        public int Agregar(E_Entidad CEntidad)
+        public int Agregar(E_Recibo CEntidad)
         {
             entidad = CEntidad;
             string agregar = "INSERT INTO TRecibo (nroRecibo, dni) " +
                             "VALUES('@nroRecibo', '@dni')";
-            List<dynamic> ParametrosS = entidad.Valores;
-            string[] NombresAtributos = entidad.NombresAtributos();
             Parametros = new List<SqlParameter>();
-            for (int k = 0; k < NombresAtributos.Length; k++)
-            {
-                Parametros.Add(new SqlParameter($"@{NombresAtributos[k]}", ParametrosS[k]));
-            }
+            Parametros.Add(new SqlParameter($"@nroRecibo", entidad.nroRecibo));
+            Parametros.Add(new SqlParameter($"@dni", entidad.dni));
             return ExecuteNonQuery(agregar);
         }
 
-        public int Editar(E_Entidad CEntidad)
+        public int Editar(E_Recibo CEntidad)
         {
             entidad = CEntidad;
             string editar = "update TRecibo set nroRecibo = @nroRecibo where dni = @dni";
-            List<dynamic> ParametrosS = entidad.Valores;
-            Parametros = new List<System.Data.SqlClient.SqlParameter>();
-            for (int k = 0; k < entidad.numeroAtributos(); k++)
-            {
-                Parametros.Add(new SqlParameter($"@{entidad.NombresAtributos()[k]}", ParametrosS[k]));
-            }
+            Parametros = new List<SqlParameter>();
+            Parametros.Add(new SqlParameter($"@nroRecibo", entidad.nroRecibo));
+            Parametros.Add(new SqlParameter($"@dni", entidad.dni));
             return ExecuteNonQuery(editar);
         }
 
@@ -53,21 +46,19 @@ namespace CapaDatos.Repositorios
             return ExecuteNonQuery(eliminar);
         }
 
-        public IEnumerable<E_Entidad> ObtenerTodo()
+        public IEnumerable<E_Recibo> ObtenerTodo()
         {
             string registros = "select nroRecibo, dni from TRecibo";
             var tablaPostulantes = ExecuteReader(registros);
-            var listaPostulantes = new List<E_Entidad>();
-            List<dynamic> Valores;
+            var listaPostulantes = new List<E_Recibo>();
             foreach (DataRow item in tablaPostulantes.Rows)
             {
-                Valores = new List<dynamic>();
-                for (int k = 0; k < entidad.numeroAtributos(); k++)
+                var recibo = new E_Recibo
                 {
-                    Valores.Add(item[k].ToString());
-                }
-                entidad.Valores = Valores;
-                listaPostulantes.Add(entidad);
+                    nroRecibo = item["nroRecibo"].ToString(),
+                    dni = item["dni"].ToString()
+                };
+                listaPostulantes.Add(recibo);
             }
             return listaPostulantes;
         }

@@ -20,7 +20,6 @@ namespace CapaDatos.Repositorios
                 {
                     comando.Connection = conexion;
                     comando.CommandText = transaccionSql;
-                    comando.CommandType = CommandType.Text;
                     foreach (SqlParameter item in Parametros)
                     {
                         comando.Parameters.Add(item);
@@ -29,7 +28,6 @@ namespace CapaDatos.Repositorios
                     Parametros.Clear();
                     return resultado;
                 }
-
             }
         }
         protected DataTable ExecuteReader(string transaccionSql)

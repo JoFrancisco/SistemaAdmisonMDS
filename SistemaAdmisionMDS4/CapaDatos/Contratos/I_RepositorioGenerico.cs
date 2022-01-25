@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Contratos
 {
-    public interface I_Entidad<Entity> where Entity : class
+    public interface I_RepositorioGenerico<Entity> where Entity : class
     {
         int Agregar(Entity CEntidad);
         int Editar(Entity CEntidad);

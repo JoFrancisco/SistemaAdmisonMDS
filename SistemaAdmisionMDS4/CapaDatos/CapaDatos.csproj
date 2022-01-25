@@ -42,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contratos\I_Entidad.cs" />
-    <Compile Include="Contratos\I_RepositorioEntidad.cs" />
-    <Compile Include="Entidades\E_Entidad.cs" />
+    <Compile Include="Contratos\I_RepositorioGenerico.cs" />
+    <Compile Include="Contratos\I_RepositorioPostulante.cs" />
+    <Compile Include="Contratos\I_RepositorioRecibo.cs" />
     <Compile Include="Entidades\E_Login.cs" />
     <Compile Include="Entidades\E_Postulante.cs" />
     <Compile Include="Entidades\E_Recibo.cs" />

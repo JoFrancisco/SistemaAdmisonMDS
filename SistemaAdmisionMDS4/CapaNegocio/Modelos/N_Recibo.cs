@@ -17,7 +17,7 @@ namespace CapaNegocio.Modelos
         string nroRecibo;
         string dni;
         private List<N_Recibo> n_Recibos;
-        private I_RepositorioEntidad repositorioRecibo;
+        private I_RepositorioRecibo repositorioRecibo;
         private List<string> mensajes;
         public EstadoEntidad Estado { private get; set; }
 
@@ -38,10 +38,8 @@ namespace CapaNegocio.Modelos
             try
             {
                 var modeloRecibo = new E_Recibo();
-                List<dynamic> Values = new List<dynamic>();
-                Values.Add(dni);
-                modeloRecibo.Valores = Values;
-
+                modeloRecibo.dni = dni;
+                modeloRecibo.nroRecibo = nroRecibo;
                 switch (Estado)
                 {
                     case EstadoEntidad.Agregad:
@@ -91,13 +89,12 @@ namespace CapaNegocio.Modelos
         {
             var modeloRecibo = repositorioRecibo.ObtenerTodo();
             n_Recibos = new List<N_Recibo>();
-            foreach (E_Entidad item in modeloRecibo)
+            foreach (E_Recibo item in modeloRecibo)
             {
-                List<dynamic> values = item.Valores;
                 n_Recibos.Add(new N_Recibo
                 {
-                    nroRecibo = values[0],
-                    dni = values[1]
+                    nroRecibo = item.nroRecibo,
+                    dni = item.dni
                 }); ;
             }
             return n_Recibos;

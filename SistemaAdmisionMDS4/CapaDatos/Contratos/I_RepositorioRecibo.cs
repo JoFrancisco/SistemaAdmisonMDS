@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Contratos
 {
-    public interface I_RepositorioEntidad:I_Entidad<Entidades.E_Entidad>
+    public interface I_RepositorioRecibo: I_RepositorioGenerico<Entidades.E_Recibo>
     {
-
     }
 }

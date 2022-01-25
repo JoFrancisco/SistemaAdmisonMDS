@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Entidades
 {
-    public class E_Login:E_Entidad
+    public class E_Login
     {
-        public E_Login() : base("TLogin")
-        {
-
-        }
-        public override string[] NombresAtributos()
-        {
-            return new String[] { "id", "codUsuario", "nombreUsuario", "contrasenia", "tipoUsuario" };
-        }
+        public string codUsuario { get; set; }
+        public string contrasenia { get; set; }
+        public string tipoUsuario { get; set; }
     }
 }

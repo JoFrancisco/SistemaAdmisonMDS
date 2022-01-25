@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Entidades
 {
-    public class E_Recibo:E_Entidad
+    public class E_Recibo
     {
-        public E_Recibo() : base("TRecibo")
-        {
-
-        }
-        public override string[] NombresAtributos()
-        {
-            return new String[] { "nroRecibo", "dni" };
-        }
+        public string nroRecibo { get; set; }
+        public string dni { get; set; }
     }
 }

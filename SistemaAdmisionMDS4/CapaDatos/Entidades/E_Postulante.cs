@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace CapaDatos.Entidades
 {
-    public class E_Postulante:E_Entidad
+    public class E_Postulante
     {
-        public E_Postulante() : base("TPostulante")
-        {
-
-        }
-        public override string[] NombresAtributos()
-        {
-            return new String[] { "dni", "nombres", "fecha" };
-        }
+        public string dni { get; set; }
+        public string nombres { get; set; }
+        public DateTime fecha { get; set; }
     }
 }

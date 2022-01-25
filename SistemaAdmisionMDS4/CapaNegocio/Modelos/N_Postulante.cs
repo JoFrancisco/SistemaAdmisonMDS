@@ -18,7 +18,7 @@ namespace CapaNegocio.Modelos
         private string nombres;
         private DateTime fecha;
         private List<N_Postulante> n_Postulantes;
-        private I_RepositorioEntidad repositorioPostulante;
+        private I_RepositorioPostulante repositorioPostulante;
         private List<string> mensajes;
         public EstadoEntidad Estado { private get; set; }
         [Required(ErrorMessage = "El dni del postulante es necesario")]
@@ -41,11 +41,9 @@ namespace CapaNegocio.Modelos
             {
                 var modeloDatoPostulante = new E_Postulante();
                 List<dynamic> Values = new List<dynamic>();
-                Values.Add(dni);
-                Values.Add(nombres);
-                Values.Add(fecha);
-                modeloDatoPostulante.Valores = Values;
-
+                modeloDatoPostulante.dni = dni;
+                modeloDatoPostulante.nombres = nombres;
+                modeloDatoPostulante.fecha = fecha;
                 switch (Estado)
                 {
                     case EstadoEntidad.Agregad:
@@ -98,14 +96,13 @@ namespace CapaNegocio.Modelos
         {
             var modeloDatoPostulante = repositorioPostulante.ObtenerTodo();
             n_Postulantes = new List<N_Postulante>();
-            foreach (E_Entidad item in modeloDatoPostulante)
+            foreach (E_Postulante item in modeloDatoPostulante)
             {
-                List<dynamic> values = item.Valores;
                 n_Postulantes.Add(new N_Postulante
                 {
-                    dni = values[0],
-                    nombres = values[1],
-                    Fecha = values[2]
+                    dni = item.dni,
+                    nombres = item.nombres,
+                    Fecha = item.fecha
                 });
             }
             return n_Postulantes;
