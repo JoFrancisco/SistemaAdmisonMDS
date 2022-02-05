@@ -28,7 +28,19 @@ namespace SistemaAdmisionMDS4
             acceso.Contrasenia = textContrasenia.Text;
             if (acceso.ConsultarUsuario())
             {
-                MessageBox.Show("se ingreso correctamente");
+                string tipo = acceso.Tipo(acceso.CodUsuario);
+                if (tipo == "Postulante")
+                {
+                    P_Postulante p_Postulante = new P_Postulante();
+                    p_Postulante.Show();
+                    this.Visible = false;
+                }
+                else
+                {
+                    P_Digitador p_Digitador = new P_Digitador();
+                    p_Digitador.Show();
+                    this.Visible = false;
+                }
             }
             else
             {

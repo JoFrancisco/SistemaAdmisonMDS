@@ -14,27 +14,52 @@ namespace CapaNegocio.Modelos
 {
     public class N_Postulante:IDisposable
     {
+        #region atributos
         private string dni;
         private string nombres;
+        private string apPaterno;
+        private string apMaterno;
         private DateTime fecha;
+        private string aRecibo;
         private List<N_Postulante> n_Postulantes;
-        private I_RepositorioPostulante repositorioPostulante;
+        private CRepositorioPostulante repositorioPostulante;
         private List<string> mensajes;
         public EstadoEntidad Estado { private get; set; }
-        [Required(ErrorMessage = "El dni del postulante es necesario")]
-        [RegularExpression("([0-9]+)", ErrorMessage = "El dni del Postulante solo debe contener numeros")]
-        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El dni del Postulante debe tener 8 digitos")]
+        #endregion atributos
+
+        #region Validacion Getters y Setters
+        [Required(ErrorMessage = "dni. campo obligatorio")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "El dni solo debe contener numeros")]
+        [StringLength(maximumLength: 8, MinimumLength = 8, ErrorMessage = "El dni debe tener 8 digitos")]
         public string Dni { get => dni; set => dni = value; }
-        [Required(ErrorMessage = "Los nombres del Postulante es necesario")]
-        [RegularExpression("[a-z A-Z]+$", ErrorMessage = "Los nombres del Postulante solo debe contener letras")]
-        [StringLength(maximumLength: 40, MinimumLength = 3, ErrorMessage = "Los nombres del Postulante debe contener de 4 a 40 letras")]
+
+        [Required(ErrorMessage = "nombres. campo obligatorio")]
+        [RegularExpression("[a-z A-Z]+$", ErrorMessage = "Los nombres solo debe contener letras")]
+        [StringLength(maximumLength: 40, MinimumLength = 3, ErrorMessage = "Los nombres debe contener de 4 a 40 letras")]
         public string Nombres { get => nombres; set => nombres = value; }
+       
+        [Required(ErrorMessage = "apellido paterno. campo obligatorio")]
+        [RegularExpression("[a-z A-Z]+$", ErrorMessage = "El apellido paterno solo debe contener letras")]
+        [StringLength(maximumLength: 40, MinimumLength = 3, ErrorMessage = "El apellido paterno debe contener de 3 a 40 letras")]
+        public string ApPaterno { get => apPaterno; set => apPaterno = value; }
+
+        [Required(ErrorMessage = "apellido materno. campo obligatorio")]
+        [RegularExpression("[a-z A-Z]+$", ErrorMessage = "El apellido materno solo debe contener letras")]
+        [StringLength(maximumLength: 40, MinimumLength = 3, ErrorMessage = "El apellido materno debe contener de 3 a 40 letras")]
+        public string ApMaterno { get => apMaterno; set => apMaterno = value; }
+
         [Required(ErrorMessage = "La fecha de nacimiento es necesario")]
-        public DateTime Fecha { get => fecha; set => fecha = value; }   
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+
+        [Required(ErrorMessage = "recibo. campo obligatorio")]
+        [RegularExpression("R-([0-9]){5,5}$", ErrorMessage = "El recibo debe ser R-XXXXX")]
+        public string Recibo { get => aRecibo; set => aRecibo = value; }
+        #endregion Validaciones Getters y Setters
+
         public N_Postulante():base(){
             repositorioPostulante = new CRepositorioPostulante();
         }
-        public string GuardarCambios()
+        public string GuardarCambios(string Contrasenia)
         {
             string Mensaje = null;
             try
@@ -43,10 +68,13 @@ namespace CapaNegocio.Modelos
                 List<dynamic> Values = new List<dynamic>();
                 modeloDatoPostulante.dni = dni;
                 modeloDatoPostulante.nombres = nombres;
+                modeloDatoPostulante.apPaterno = apPaterno;
+                modeloDatoPostulante.apMaterno = apMaterno;
                 modeloDatoPostulante.fecha = fecha;
                 switch (Estado)
                 {
                     case EstadoEntidad.Agregad:
+                        repositorioPostulante.Contrasenia = Contrasenia;
                         repositorioPostulante.Agregar(modeloDatoPostulante);
                         Mensaje = "Registrado correctamente";
                         break;
@@ -114,6 +142,8 @@ namespace CapaNegocio.Modelos
             mensajes = validacionDatos.mensajes();
             return validate;
         }
+
+        #region mensajes de error de cada atributo
         private List<string> contains(List<string> ls, string verf)
         {
             List<string> nls = new List<string>();
@@ -137,15 +167,28 @@ namespace CapaNegocio.Modelos
         {
             return contains(mensajes, "nombres");
         }
-        public List<string> mensajesFecha()
+        public List<string> mensajesApPaterno()
         {
-            return contains(mensajes, "fecha");
+            return contains(mensajes, "apellido paterno");
+        }
+        public List<string> mensajesApMaterno()
+        {
+            return contains(mensajes, "apellido materno");
+        }
+        public List<string> mensajesRecibo()
+        {
+            return contains(mensajes, "recibo");
         }
 
         public bool BuscarPostulante(string dni)
         {
             return repositorioPostulante.Buscar(dni, null);
         }
+        public bool VerificarRecibo()
+        {
+            return repositorioPostulante.validarRecibo(dni, aRecibo);
+        }
+        #endregion
         public void Dispose()
         {
 

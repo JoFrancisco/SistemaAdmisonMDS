@@ -29,6 +29,7 @@ namespace SistemaAdmisionMDS4
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P_Registro));
             this.textDni = new System.Windows.Forms.TextBox();
             this.textNombres = new System.Windows.Forms.TextBox();
@@ -44,19 +45,34 @@ namespace SistemaAdmisionMDS4
             this.label6 = new System.Windows.Forms.Label();
             this.textContrasenia = new System.Windows.Forms.TextBox();
             this.textVerContrasenia = new System.Windows.Forms.TextBox();
-            this.linkDni = new System.Windows.Forms.LinkLabel();
-            this.linkNombres = new System.Windows.Forms.LinkLabel();
-            this.linkContrasenia = new System.Windows.Forms.LinkLabel();
-            this.linkVerContrasenia = new System.Windows.Forms.LinkLabel();
+            this.textRecibo = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pbCorrectoDni = new System.Windows.Forms.PictureBox();
             this.picBoxMinimizar = new System.Windows.Forms.PictureBox();
             this.picBoxCerrar = new System.Windows.Forms.PictureBox();
-            this.textRecibo = new System.Windows.Forms.TextBox();
-            this.linkRecibo = new System.Windows.Forms.LinkLabel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pbCorrectoNombres = new System.Windows.Forms.PictureBox();
+            this.pbCorrrectoContrasenia = new System.Windows.Forms.PictureBox();
+            this.pbCorrectoVerContrasenia = new System.Windows.Forms.PictureBox();
+            this.pbCorrectoRecibo = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textPaterno = new System.Windows.Forms.TextBox();
+            this.textMaterno = new System.Windows.Forms.TextBox();
+            this.pbPaterno = new System.Windows.Forms.PictureBox();
+            this.pbMaterno = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoDni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoNombres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrrectoContrasenia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoVerContrasenia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoRecibo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPaterno)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMaterno)).BeginInit();
             this.SuspendLayout();
             // 
             // textDni
@@ -72,7 +88,7 @@ namespace SistemaAdmisionMDS4
             // textNombres
             // 
             this.textNombres.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNombres.Location = new System.Drawing.Point(562, 184);
+            this.textNombres.Location = new System.Drawing.Point(562, 192);
             this.textNombres.Margin = new System.Windows.Forms.Padding(4);
             this.textNombres.Name = "textNombres";
             this.textNombres.Size = new System.Drawing.Size(314, 28);
@@ -84,19 +100,19 @@ namespace SistemaAdmisionMDS4
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(506, 138);
+            this.label1.Location = new System.Drawing.Point(503, 138);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 21);
+            this.label1.Size = new System.Drawing.Size(36, 21);
             this.label1.TabIndex = 1;
-            this.label1.Text = "DNI";
+            this.label1.Text = "Dni";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
-            this.label2.Location = new System.Drawing.Point(463, 191);
+            this.label2.Location = new System.Drawing.Point(463, 199);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 21);
@@ -108,7 +124,7 @@ namespace SistemaAdmisionMDS4
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkRed;
-            this.label3.Location = new System.Drawing.Point(359, 249);
+            this.label3.Location = new System.Drawing.Point(359, 404);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(188, 21);
@@ -117,13 +133,16 @@ namespace SistemaAdmisionMDS4
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(603, 485);
+            this.btnRegistrar.BackColor = System.Drawing.Color.DimGray;
+            this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.ForeColor = System.Drawing.Color.DarkRed;
+            this.btnRegistrar.Location = new System.Drawing.Point(595, 634);
             this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(100, 28);
+            this.btnRegistrar.Size = new System.Drawing.Size(118, 42);
             this.btnRegistrar.TabIndex = 2;
             this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // label4
@@ -144,7 +163,7 @@ namespace SistemaAdmisionMDS4
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(352, 559);
+            this.panel1.Size = new System.Drawing.Size(352, 689);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox1
@@ -153,7 +172,7 @@ namespace SistemaAdmisionMDS4
             this.pictureBox1.Image = global::SistemaAdmisionMDS4.Properties.Resources.imgUnsaac1_jpg;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(352, 559);
+            this.pictureBox1.Size = new System.Drawing.Size(352, 689);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -161,7 +180,7 @@ namespace SistemaAdmisionMDS4
             // datePicker
             // 
             this.datePicker.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePicker.Location = new System.Drawing.Point(562, 244);
+            this.datePicker.Location = new System.Drawing.Point(562, 399);
             this.datePicker.Name = "datePicker";
             this.datePicker.Size = new System.Drawing.Size(314, 26);
             this.datePicker.TabIndex = 5;
@@ -172,7 +191,7 @@ namespace SistemaAdmisionMDS4
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkRed;
-            this.label5.Location = new System.Drawing.Point(365, 367);
+            this.label5.Location = new System.Drawing.Point(365, 530);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 21);
@@ -184,7 +203,7 @@ namespace SistemaAdmisionMDS4
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkRed;
-            this.label6.Location = new System.Drawing.Point(438, 309);
+            this.label6.Location = new System.Drawing.Point(438, 467);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 21);
@@ -194,7 +213,7 @@ namespace SistemaAdmisionMDS4
             // textContrasenia
             // 
             this.textContrasenia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textContrasenia.Location = new System.Drawing.Point(562, 302);
+            this.textContrasenia.Location = new System.Drawing.Point(562, 460);
             this.textContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.textContrasenia.Name = "textContrasenia";
             this.textContrasenia.PasswordChar = '*';
@@ -205,7 +224,7 @@ namespace SistemaAdmisionMDS4
             // textVerContrasenia
             // 
             this.textVerContrasenia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textVerContrasenia.Location = new System.Drawing.Point(562, 360);
+            this.textVerContrasenia.Location = new System.Drawing.Point(562, 523);
             this.textVerContrasenia.Margin = new System.Windows.Forms.Padding(4);
             this.textVerContrasenia.Name = "textVerContrasenia";
             this.textVerContrasenia.PasswordChar = '*';
@@ -213,59 +232,43 @@ namespace SistemaAdmisionMDS4
             this.textVerContrasenia.TabIndex = 9;
             this.textVerContrasenia.TextChanged += new System.EventHandler(this.textVerContrasenia_TextChanged);
             // 
-            // linkDni
+            // textRecibo
             // 
-            this.linkDni.ActiveLinkColor = System.Drawing.Color.White;
-            this.linkDni.AutoSize = true;
-            this.linkDni.BackColor = System.Drawing.Color.White;
-            this.linkDni.ForeColor = System.Drawing.Color.Red;
-            this.linkDni.LinkColor = System.Drawing.Color.Red;
-            this.linkDni.Location = new System.Drawing.Point(805, 163);
-            this.linkDni.Name = "linkDni";
-            this.linkDni.Size = new System.Drawing.Size(71, 16);
-            this.linkDni.TabIndex = 10;
-            this.linkDni.TabStop = true;
-            this.linkDni.Text = "obligatorio";
-            this.linkDni.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.textRecibo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textRecibo.Location = new System.Drawing.Point(562, 587);
+            this.textRecibo.Margin = new System.Windows.Forms.Padding(4);
+            this.textRecibo.Name = "textRecibo";
+            this.textRecibo.PasswordChar = '*';
+            this.textRecibo.Size = new System.Drawing.Size(314, 28);
+            this.textRecibo.TabIndex = 17;
+            this.textRecibo.TextChanged += new System.EventHandler(this.textRecibo_TextChanged);
             // 
-            // linkNombres
+            // label7
             // 
-            this.linkNombres.AutoSize = true;
-            this.linkNombres.ForeColor = System.Drawing.Color.Red;
-            this.linkNombres.LinkColor = System.Drawing.Color.Red;
-            this.linkNombres.Location = new System.Drawing.Point(805, 216);
-            this.linkNombres.Name = "linkNombres";
-            this.linkNombres.Size = new System.Drawing.Size(71, 16);
-            this.linkNombres.TabIndex = 11;
-            this.linkNombres.TabStop = true;
-            this.linkNombres.Text = "obligatorio";
-            this.linkNombres.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DarkRed;
+            this.label7.Location = new System.Drawing.Point(409, 594);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 21);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Numero Recibo";
             // 
-            // linkContrasenia
+            // errorProvider1
             // 
-            this.linkContrasenia.AutoSize = true;
-            this.linkContrasenia.BackColor = System.Drawing.Color.White;
-            this.linkContrasenia.ForeColor = System.Drawing.Color.Red;
-            this.linkContrasenia.LinkColor = System.Drawing.Color.Red;
-            this.linkContrasenia.Location = new System.Drawing.Point(805, 334);
-            this.linkContrasenia.Name = "linkContrasenia";
-            this.linkContrasenia.Size = new System.Drawing.Size(71, 16);
-            this.linkContrasenia.TabIndex = 13;
-            this.linkContrasenia.TabStop = true;
-            this.linkContrasenia.Text = "obligatorio";
-            this.linkContrasenia.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // linkVerContrasenia
+            // pbCorrectoDni
             // 
-            this.linkVerContrasenia.AutoSize = true;
-            this.linkVerContrasenia.LinkColor = System.Drawing.Color.Red;
-            this.linkVerContrasenia.Location = new System.Drawing.Point(805, 392);
-            this.linkVerContrasenia.Name = "linkVerContrasenia";
-            this.linkVerContrasenia.Size = new System.Drawing.Size(71, 16);
-            this.linkVerContrasenia.TabIndex = 14;
-            this.linkVerContrasenia.TabStop = true;
-            this.linkVerContrasenia.Text = "obligatorio";
-            this.linkVerContrasenia.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.pbCorrectoDni.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbCorrectoDni.Location = new System.Drawing.Point(883, 139);
+            this.pbCorrectoDni.Name = "pbCorrectoDni";
+            this.pbCorrectoDni.Size = new System.Drawing.Size(20, 20);
+            this.pbCorrectoDni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCorrectoDni.TabIndex = 20;
+            this.pbCorrectoDni.TabStop = false;
+            this.pbCorrectoDni.Visible = false;
             // 
             // picBoxMinimizar
             // 
@@ -289,56 +292,137 @@ namespace SistemaAdmisionMDS4
             this.picBoxCerrar.TabStop = false;
             this.picBoxCerrar.Click += new System.EventHandler(this.picBoxCerrar_Click);
             // 
-            // textRecibo
+            // pbCorrectoNombres
             // 
-            this.textRecibo.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textRecibo.Location = new System.Drawing.Point(562, 426);
-            this.textRecibo.Margin = new System.Windows.Forms.Padding(4);
-            this.textRecibo.Name = "textRecibo";
-            this.textRecibo.PasswordChar = '*';
-            this.textRecibo.Size = new System.Drawing.Size(314, 28);
-            this.textRecibo.TabIndex = 17;
-            this.textRecibo.TextChanged += new System.EventHandler(this.textRecibo_TextChanged);
+            this.pbCorrectoNombres.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbCorrectoNombres.Location = new System.Drawing.Point(883, 192);
+            this.pbCorrectoNombres.Name = "pbCorrectoNombres";
+            this.pbCorrectoNombres.Size = new System.Drawing.Size(20, 20);
+            this.pbCorrectoNombres.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCorrectoNombres.TabIndex = 21;
+            this.pbCorrectoNombres.TabStop = false;
+            this.pbCorrectoNombres.Visible = false;
             // 
-            // linkRecibo
+            // pbCorrrectoContrasenia
             // 
-            this.linkRecibo.AutoSize = true;
-            this.linkRecibo.LinkColor = System.Drawing.Color.Red;
-            this.linkRecibo.Location = new System.Drawing.Point(805, 458);
-            this.linkRecibo.Name = "linkRecibo";
-            this.linkRecibo.Size = new System.Drawing.Size(71, 16);
-            this.linkRecibo.TabIndex = 18;
-            this.linkRecibo.TabStop = true;
-            this.linkRecibo.Text = "obligatorio";
-            this.linkRecibo.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.pbCorrrectoContrasenia.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbCorrrectoContrasenia.Location = new System.Drawing.Point(883, 468);
+            this.pbCorrrectoContrasenia.Name = "pbCorrrectoContrasenia";
+            this.pbCorrrectoContrasenia.Size = new System.Drawing.Size(20, 20);
+            this.pbCorrrectoContrasenia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCorrrectoContrasenia.TabIndex = 22;
+            this.pbCorrrectoContrasenia.TabStop = false;
+            this.pbCorrrectoContrasenia.Visible = false;
             // 
-            // label7
+            // pbCorrectoVerContrasenia
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkRed;
-            this.label7.Location = new System.Drawing.Point(399, 429);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 21);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Numero Recibo";
+            this.pbCorrectoVerContrasenia.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbCorrectoVerContrasenia.Location = new System.Drawing.Point(883, 531);
+            this.pbCorrectoVerContrasenia.Name = "pbCorrectoVerContrasenia";
+            this.pbCorrectoVerContrasenia.Size = new System.Drawing.Size(20, 20);
+            this.pbCorrectoVerContrasenia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCorrectoVerContrasenia.TabIndex = 23;
+            this.pbCorrectoVerContrasenia.TabStop = false;
+            this.pbCorrectoVerContrasenia.Visible = false;
+            // 
+            // pbCorrectoRecibo
+            // 
+            this.pbCorrectoRecibo.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbCorrectoRecibo.Location = new System.Drawing.Point(883, 595);
+            this.pbCorrectoRecibo.Name = "pbCorrectoRecibo";
+            this.pbCorrectoRecibo.Size = new System.Drawing.Size(20, 20);
+            this.pbCorrectoRecibo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCorrectoRecibo.TabIndex = 24;
+            this.pbCorrectoRecibo.TabStop = false;
+            this.pbCorrectoRecibo.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkRed;
+            this.label8.Location = new System.Drawing.Point(398, 265);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(149, 21);
+            this.label8.TabIndex = 25;
+            this.label8.Text = "Apellido Paterno";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DarkRed;
+            this.label9.Location = new System.Drawing.Point(388, 333);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(156, 21);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Apellido Materno";
+            // 
+            // textPaterno
+            // 
+            this.textPaterno.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPaterno.Location = new System.Drawing.Point(562, 258);
+            this.textPaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.textPaterno.Name = "textPaterno";
+            this.textPaterno.Size = new System.Drawing.Size(314, 28);
+            this.textPaterno.TabIndex = 27;
+            this.textPaterno.TextChanged += new System.EventHandler(this.textPaterno_TextChanged);
+            // 
+            // textMaterno
+            // 
+            this.textMaterno.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textMaterno.Location = new System.Drawing.Point(562, 326);
+            this.textMaterno.Margin = new System.Windows.Forms.Padding(4);
+            this.textMaterno.Name = "textMaterno";
+            this.textMaterno.Size = new System.Drawing.Size(314, 28);
+            this.textMaterno.TabIndex = 28;
+            this.textMaterno.TextChanged += new System.EventHandler(this.textMaterno_TextChanged);
+            // 
+            // pbPaterno
+            // 
+            this.pbPaterno.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbPaterno.Location = new System.Drawing.Point(883, 266);
+            this.pbPaterno.Name = "pbPaterno";
+            this.pbPaterno.Size = new System.Drawing.Size(20, 20);
+            this.pbPaterno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPaterno.TabIndex = 29;
+            this.pbPaterno.TabStop = false;
+            this.pbPaterno.Visible = false;
+            // 
+            // pbMaterno
+            // 
+            this.pbMaterno.Image = global::SistemaAdmisionMDS4.Properties.Resources.correcto;
+            this.pbMaterno.Location = new System.Drawing.Point(883, 334);
+            this.pbMaterno.Name = "pbMaterno";
+            this.pbMaterno.Size = new System.Drawing.Size(20, 20);
+            this.pbMaterno.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMaterno.TabIndex = 30;
+            this.pbMaterno.TabStop = false;
+            this.pbMaterno.Visible = false;
             // 
             // P_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(925, 559);
+            this.ClientSize = new System.Drawing.Size(925, 689);
+            this.Controls.Add(this.pbMaterno);
+            this.Controls.Add(this.pbPaterno);
+            this.Controls.Add(this.textMaterno);
+            this.Controls.Add(this.textPaterno);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.pbCorrectoRecibo);
+            this.Controls.Add(this.pbCorrectoVerContrasenia);
+            this.Controls.Add(this.pbCorrrectoContrasenia);
+            this.Controls.Add(this.pbCorrectoNombres);
+            this.Controls.Add(this.pbCorrectoDni);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.linkRecibo);
             this.Controls.Add(this.textRecibo);
             this.Controls.Add(this.picBoxMinimizar);
             this.Controls.Add(this.picBoxCerrar);
-            this.Controls.Add(this.linkVerContrasenia);
-            this.Controls.Add(this.linkContrasenia);
-            this.Controls.Add(this.linkNombres);
-            this.Controls.Add(this.linkDni);
             this.Controls.Add(this.textVerContrasenia);
             this.Controls.Add(this.textContrasenia);
             this.Controls.Add(this.label6);
@@ -358,11 +442,20 @@ namespace SistemaAdmisionMDS4
             this.Name = "P_Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Postulante";
+            this.Load += new System.EventHandler(this.P_Registro_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.P_Registro_MouseDown);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoDni)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoNombres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrrectoContrasenia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoVerContrasenia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCorrectoRecibo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPaterno)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMaterno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,14 +477,21 @@ namespace SistemaAdmisionMDS4
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textContrasenia;
         private System.Windows.Forms.TextBox textVerContrasenia;
-        private System.Windows.Forms.LinkLabel linkDni;
-        private System.Windows.Forms.LinkLabel linkNombres;
-        private System.Windows.Forms.LinkLabel linkContrasenia;
-        private System.Windows.Forms.LinkLabel linkVerContrasenia;
         private System.Windows.Forms.PictureBox picBoxCerrar;
         private System.Windows.Forms.PictureBox picBoxMinimizar;
         private System.Windows.Forms.TextBox textRecibo;
-        private System.Windows.Forms.LinkLabel linkRecibo;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pbCorrectoDni;
+        private System.Windows.Forms.PictureBox pbCorrectoRecibo;
+        private System.Windows.Forms.PictureBox pbCorrectoVerContrasenia;
+        private System.Windows.Forms.PictureBox pbCorrrectoContrasenia;
+        private System.Windows.Forms.PictureBox pbCorrectoNombres;
+        private System.Windows.Forms.TextBox textMaterno;
+        private System.Windows.Forms.TextBox textPaterno;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pbMaterno;
+        private System.Windows.Forms.PictureBox pbPaterno;
     }
 }

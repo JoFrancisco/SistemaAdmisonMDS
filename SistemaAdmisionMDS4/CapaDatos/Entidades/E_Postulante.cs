@@ -10,6 +10,8 @@ namespace CapaDatos.Entidades
     {
         public string dni { get; set; }
         public string nombres { get; set; }
+        public string apPaterno { get; set; }
+        public string apMaterno { get; set; }
         public DateTime fecha { get; set; }
     }
 }

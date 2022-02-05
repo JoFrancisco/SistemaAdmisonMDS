@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaDatos.Contratos
+namespace CapaNegocio.Modelos
 {
-    public interface I_RepositorioRecibo: I_RepositorioGenerico<Entidades.E_Recibo>
+    public class N_Solucionario
     {
+        public N_Solucionario()
+        {
+
+        }
+
     }
 }

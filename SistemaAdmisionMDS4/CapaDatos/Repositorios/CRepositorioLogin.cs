@@ -10,14 +10,15 @@ namespace CapaDatos.Repositorios
 {
     public class CRepositorioLogin:CRepositorioGeneral
     {
-        private string insertar = "INSERT TLogin (codUsuario, nombreUsuario, contrasenia, tipoUsuario) " +
-                                    "VALUES (@codigo, @nombre, @contrasenia, @tipo)";
+        private string insertar = "insert TLogin (dni, nombreUsuario, contrasenia) " +
+                                    "values (@dni, @nombreUsuario, @contrasenia)";
         public bool ConsultarUsuario(string codUsuario, string contrasenia)
         {
             Parametros = new List<SqlParameter>();
-            Parametros.Add(new SqlParameter("@codUsuario", codUsuario));
+            Parametros.Add(new SqlParameter("@nombreUsuario", codUsuario));
             Parametros.Add(new SqlParameter("@contrasenia", contrasenia));
-            string Consulta = "select codUsuario from TLogin where codUsuario = @codUsuario and contrasenia = @contrasenia";
+            string Consulta = "select L.dni, U.tipoUsuario from TLogin L inner join TUsuario U on L.dni = U.dni " +
+                "where (nombreUsuario = @nombreUsuario and contrasenia = @contrasenia)";
             var resultado = ExecuteReader(Consulta);
             foreach (DataRow item in resultado.Rows)
             {
@@ -29,7 +30,7 @@ namespace CapaDatos.Repositorios
         {
             Parametros = new List<SqlParameter>();
             Parametros.Add(new SqlParameter("@dni", dni));
-            string Consulta = "select codUsuario from TLogin where codUsuario = @dni";
+            string Consulta = "select * from TLogin where dni = @dni";
             var resultado = ExecuteReader(Consulta);
             foreach (DataRow item in resultado.Rows)
             {
@@ -40,11 +41,22 @@ namespace CapaDatos.Repositorios
         public int Agregar(string codigo, string nombre, string contrasenia, string tipo)
         {
             Parametros = new List<SqlParameter>();
-            Parametros.Add(new SqlParameter("@codigo", codigo));
-            Parametros.Add(new SqlParameter("@nombre", nombre));
+            Parametros.Add(new SqlParameter("@dni", codigo));
+            Parametros.Add(new SqlParameter("@nombreUsuario", nombre));
             Parametros.Add(new SqlParameter("@contrasenia", contrasenia));
-            Parametros.Add(new SqlParameter("@tipo", tipo));
             return ExecuteNonQuery(insertar);
+        }
+        public string tipoUsuario(string nombreUsuario)
+        {
+            string sql = "select tipoUsuario from TLogin L inner join TUsuario U on L.dni = U.dni where nombreUsuario = @nombreUsuario";
+            Parametros = new List<SqlParameter>();
+            Parametros.Add(new SqlParameter("@nombreusuario", nombreUsuario));
+            var resultado = ExecuteReader(sql);
+            foreach (DataRow item in resultado.Rows)
+            {
+                return item[0].ToString();
+            }
+            return null;
         }
     }
 }

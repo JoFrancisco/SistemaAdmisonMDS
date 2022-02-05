@@ -44,16 +44,13 @@
   <ItemGroup>
     <Compile Include="Contratos\I_RepositorioGenerico.cs" />
     <Compile Include="Contratos\I_RepositorioPostulante.cs" />
-    <Compile Include="Contratos\I_RepositorioRecibo.cs" />
-    <Compile Include="Entidades\E_Login.cs" />
     <Compile Include="Entidades\E_Postulante.cs" />
-    <Compile Include="Entidades\E_Recibo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\CRepositorioConexion.cs" />
     <Compile Include="Repositorios\CRepositorioGeneral.cs" />
     <Compile Include="Repositorios\CRepositorioLogin.cs" />
     <Compile Include="Repositorios\CRepositorioPostulante.cs" />
-    <Compile Include="Repositorios\CRepositorioRecibo.cs" />
+    <Compile Include="Repositorios\CRepositorioServicios.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

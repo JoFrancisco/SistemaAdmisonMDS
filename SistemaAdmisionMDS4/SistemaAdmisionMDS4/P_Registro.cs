@@ -16,14 +16,28 @@ namespace SistemaAdmisionMDS4
     public partial class P_Registro : Form
     {
         N_Postulante n_Postulante = new N_Postulante();
-        N_Recibo n_Recibo = new N_Recibo();
         N_Login n_Login = new N_Login();
-        private bool verificaContrasenia;
-        private bool verificaverContrasenia;
         public P_Registro()
         {
             InitializeComponent();
         }
+        private void P_Registro_Load(object sender, EventArgs e)
+        {
+            this.errorProvider1.BlinkStyle = ErrorBlinkStyle.NeverBlink;
+            ImageList list = new ImageList();
+            list.ImageSize = new Size(16, 16);
+            list.Images.Add(Image.FromFile(@"C:\Users\USUARIO\Documents\GitHub\SistemaAdmisonMDS\SistemaAdmisionMDS4\Imagenes\IcoError.ico"));
+            this.errorProvider1.Icon = Icon.FromHandle(((Bitmap)list.Images[0]).GetHicon());
+            errorProvider1.SetError(textDni, "campo obligatorio");
+            errorProvider1.SetError(textNombres, "campo obligatorio");
+            errorProvider1.SetError(textContrasenia, "campo obligatorio");
+            errorProvider1.SetError(textVerContrasenia, "campo obligatorio");
+            errorProvider1.SetError(textRecibo, "campo obligatorio");
+            errorProvider1.SetError(textPaterno, "campo obligatorio");
+            errorProvider1.SetError(textMaterno, "campo obligatorio");
+        }
+
+        #region Mover form , Minimizar, Cerrar
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private static extern void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -43,64 +57,54 @@ namespace SistemaAdmisionMDS4
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
+        #endregion
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if(verificaContrasenia == verificaverContrasenia && verificaContrasenia == true)
+            if(errorProvider1.GetError(textDni) == "" && errorProvider1.GetError(textNombres) == "" &&
+               errorProvider1.GetError(textContrasenia) == "" && errorProvider1.GetError(textVerContrasenia) == "" &&
+               errorProvider1.GetError(textRecibo) == "")
             {
                 n_Postulante.Dni = textDni.Text;
                 n_Postulante.Nombres = textNombres.Text;
+                n_Postulante.ApPaterno = textPaterno.Text;
+                n_Postulante.ApMaterno = textMaterno.Text;
                 n_Postulante.Fecha = (DateTime)datePicker.Value;
-                if (n_Postulante.Validacion())
+                n_Postulante.Recibo = textRecibo.Text;
+                if (n_Postulante.VerificarRecibo())
                 {
-                    n_Recibo.Dni = textDni.Text;
-                    n_Recibo.NroRecibo = textRecibo.Text;
-                    if (n_Recibo.Validacion())
+                    if (!n_Postulante.BuscarPostulante(n_Postulante.Dni))
                     {
-                        if (n_Recibo.buscarRecibo(n_Recibo.Dni, n_Recibo.NroRecibo))
+                        if (!n_Login.BuscarCuenta(n_Postulante.Dni))
                         {
-                            if (!n_Postulante.BuscarPostulante(n_Postulante.Dni))
-                            {
-                                if (!n_Login.BuscarCuenta(n_Postulante.Dni))
-                                {
-                                    n_Postulante.Estado = EstadoEntidad.Agregad;
-                                    string result = n_Postulante.GuardarCambios();
-                                    MessageBox.Show(result);
-                                    n_Login.AgregarCuenta(n_Postulante.Dni, n_Postulante.Nombres, textContrasenia.Text, "Postulante");
-                                    MessageBox.Show("cuenta registrada !");
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Ya existe una cuenta del Postulante");
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("ya existe un postulante registrado con ese Recibo");
-                            }
+                            n_Postulante.Estado = EstadoEntidad.Agregad;
+                            string result = n_Postulante.GuardarCambios(textContrasenia.Text);
+                            MessageBox.Show(result);
+                            MessageBox.Show("cuenta registrada !");
                         }
                         else
                         {
-                            MessageBox.Show("No exite un numero de Recibo correspondiente al Dni de Usted\n " +
-                                "o El numero de recibo es incorrecto");
+                            MessageBox.Show("Ya existe una cuenta del Postulante");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("El numero de Recibo es Invalido");
+                        MessageBox.Show("ya existe un postulante registrado con ese Recibo");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Los datos del postulante son Invalidos");
+                    MessageBox.Show("No exite un numero de recibo correspondiente al Dni de Usted\n " +
+                        "o el numero de recibo es incorrecto");
                 }
+                
             }
             else
             {
-                MessageBox.Show("Error al ingresar contraseñas");
+                MessageBox.Show("Error al ingresar campos");
             }
         }
 
+        #region text Validacion changed
         private void textDni_TextChanged(object sender, EventArgs e)
         {
             var postulante = new N_Postulante();
@@ -111,18 +115,13 @@ namespace SistemaAdmisionMDS4
             {
                 if(list.Count != 0)
                 {
-                    
-                    linkDni.Text = list[0];
-                    linkDni.Location = new Point(430 + (60 - list[0].Length), 130);
-                    linkDni.LinkColor = Color.Red;
-                    
+                    pbCorrectoDni.Visible = false;
+                    errorProvider1.SetError(textDni, list[0]);  
                 }
                 else
                 {
-                    
-                    linkDni.Text = "correcto";
-                    linkDni.Location = new Point(615, 130);
-                    linkDni.LinkColor = Color.Green;
+                    pbCorrectoDni.Visible = true;
+                    errorProvider1.SetError(textDni, "");
                 }
             }
         }
@@ -137,18 +136,13 @@ namespace SistemaAdmisionMDS4
             {
                 if (list.Count != 0)
                 {
-
-                    linkNombres.Text = list[0];
-                    linkNombres.Location = new Point(400 + (60 - list[0].Length), 175);
-                    linkNombres.LinkColor = Color.Red;
-
+                    pbCorrectoNombres.Visible = false;
+                    errorProvider1.SetError(textNombres, list[0]);
                 }
                 else
                 {
-
-                    linkNombres.Text = "correcto";
-                    linkNombres.Location = new Point(615, 175);
-                    linkNombres.LinkColor = Color.Green;
+                    pbCorrectoNombres.Visible = true;
+                    errorProvider1.SetError(textNombres, "");
                 }
             }
         }
@@ -157,17 +151,13 @@ namespace SistemaAdmisionMDS4
         {
             if(textContrasenia.Text.Length < 6 || textContrasenia.Text.Length > 40)
             {
-                linkContrasenia.Text = "La contraseña debe contener entre 6 y 40 caracteres";
-                linkContrasenia.Location = new Point(405, 270);
-                linkContrasenia.LinkColor = Color.Red;
-                verificaContrasenia = false;
+                pbCorrrectoContrasenia.Visible = false;
+                errorProvider1.SetError(textContrasenia, "La contraseña debe contener entre 6 y 40 caracteres");
             }
             else
             {
-                linkContrasenia.Text = "correcto";
-                linkContrasenia.Location = new Point(615, 270);
-                linkContrasenia.LinkColor = Color.Green;
-                verificaContrasenia = true;
+                pbCorrrectoContrasenia.Visible = true;
+                errorProvider1.SetError(textContrasenia, "");
             }
         }
 
@@ -177,63 +167,92 @@ namespace SistemaAdmisionMDS4
             {
                 if (textVerContrasenia.Text != textContrasenia.Text)
                 {
-                    linkVerContrasenia.Text = "Las Contraseñas no son iguales";
-                    linkVerContrasenia.Location = new Point(505, 320);
-                    linkVerContrasenia.LinkColor = Color.Red;
-                    verificaverContrasenia = false;
+                    pbCorrectoVerContrasenia.Visible = false;
+                    errorProvider1.SetError(textVerContrasenia, "Las Contraseñas no son iguales");
                 }
                 else
                 {
-                    linkVerContrasenia.Text = "correcto";
-                    linkVerContrasenia.Location = new Point(615, 320);
-                    linkVerContrasenia.LinkColor = Color.Green;
-                    verificaverContrasenia = true;
+                    pbCorrectoVerContrasenia.Visible = true;
+                    errorProvider1.SetError(textVerContrasenia, "");
                 }
                 
             }
             else
             {
-                if(textVerContrasenia.Text.Length == 0)
+                pbCorrectoVerContrasenia.Visible = false;
+                if (textVerContrasenia.Text.Length == 0)
                 {
-                    linkVerContrasenia.Text = "obligatorio";
-                    linkVerContrasenia.Location = new Point(605, 320);
-                    linkVerContrasenia.LinkColor = Color.Red;
-                    verificaverContrasenia = false;
+                    errorProvider1.SetError(textVerContrasenia, "campo obligatorio");
                 }
                 else
                 {
-                    linkVerContrasenia.Text = "La contraseña debe contener entre 6 y 40 caracteres";
-                    linkVerContrasenia.Location = new Point(405, 320);
-                    linkVerContrasenia.LinkColor = Color.Red;
-                    verificaverContrasenia = false;
+                    errorProvider1.SetError(textVerContrasenia, "La contraseña debe contener entre 6 y 40 caracteres");
+                    
                 }
             }
         }
 
         private void textRecibo_TextChanged(object sender, EventArgs e)
         {
-            var recibo = new N_Recibo();
-            recibo.NroRecibo = textRecibo.Text;
-            bool error = recibo.Validacion();
-            List<string> list = recibo.mensajesRecibo();
+
+            var postulante = new N_Postulante();
+            postulante.Recibo = textRecibo.Text;
+            bool error = postulante.Validacion();
+            List<string> list = postulante.mensajesRecibo();
             if (error != true)
             {
                 if (list.Count != 0)
                 {
-
-                    linkRecibo.Text = list[0];
-                    linkRecibo.Location = new Point(395 + (60 - list[0].Length), 370);
-                    linkRecibo.LinkColor = Color.Red;
-
+                    pbCorrectoRecibo.Visible = false;
+                    errorProvider1.SetError(textRecibo, list[0]);
                 }
                 else
                 {
-
-                    linkRecibo.Text = "correcto";
-                    linkRecibo.Location = new Point(615, 370);
-                    linkRecibo.LinkColor = Color.Green;
+                    pbCorrectoRecibo.Visible = true;
+                    errorProvider1.SetError(textRecibo, "");
                 }
             }
         }
+        private void textPaterno_TextChanged(object sender, EventArgs e)
+        {
+            var postulante = new N_Postulante();
+            postulante.ApPaterno = textPaterno.Text;
+            bool error = postulante.Validacion();
+            List<string> list = postulante.mensajesApPaterno();
+            if (error != true)
+            {
+                if (list.Count != 0)
+                {
+                    pbPaterno.Visible = false;
+                    errorProvider1.SetError(textPaterno, list[0]);
+                }
+                else
+                {
+                    pbPaterno.Visible = true;
+                    errorProvider1.SetError(textPaterno, "");
+                }
+            }
+        }
+        private void textMaterno_TextChanged(object sender, EventArgs e)
+        {
+            var postulante = new N_Postulante();
+            postulante.ApMaterno = textMaterno.Text;
+            bool error = postulante.Validacion();
+            List<string> list = postulante.mensajesApMaterno();
+            if (error != true)
+            {
+                if (list.Count != 0)
+                {
+                    pbMaterno.Visible = false;
+                    errorProvider1.SetError(textMaterno, list[0]);
+                }
+                else
+                {
+                    pbMaterno.Visible = true;
+                    errorProvider1.SetError(textMaterno, "");
+                }
+            }
+        }
+        #endregion
     }
 }

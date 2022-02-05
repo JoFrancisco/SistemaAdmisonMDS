@@ -63,6 +63,16 @@ namespace SistemaAdmisionMDS4.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap correcto {
+            get {
+                object obj = ResourceManager.GetObject("correcto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgCerrar {
             get {
                 object obj = ResourceManager.GetObject("imgCerrar", resourceCulture);
@@ -106,6 +116,16 @@ namespace SistemaAdmisionMDS4.Properties {
         internal static System.Drawing.Bitmap maximizaMin {
             get {
                 object obj = ResourceManager.GetObject("maximizaMin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizaMax {
+            get {
+                object obj = ResourceManager.GetObject("minimizaMax", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
